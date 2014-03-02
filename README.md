@@ -2,7 +2,7 @@ PlannerAppProgress
 ==================
 ##2014-03-02
 
-Begonnen aan de planner applicatie. de templates zijn af, deze zijn: afspraken en taken, komende afspraken en taken, boodschappen en een template voor het weer van vandaag. 
+Begonnen aan de [planner applicatie](https://github.com/KennyVandenberghe/PlannerAppProgress/tree/master/PlannerApp). de templates zijn af, deze zijn: afspraken en taken, komende afspraken en taken, boodschappen en een template voor het weer van vandaag. 
 
 Aan alle templates (buiten die van het weer) kunnen al dingen toegevoegd en verwijderd worden, deze dingen komen mooi in een tabel te staan in de correcte template. 
 
