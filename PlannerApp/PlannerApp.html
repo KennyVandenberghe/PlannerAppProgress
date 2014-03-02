@@ -1,0 +1,118 @@
+<head>
+    <title>PlannerApp</title>
+</head>
+
+<body>
+    <div style="margin-left:120px;">
+        <div style="float:left;margin:10px;margin-right:100px;">{{> afspraken}} {{> kafspraken}}</div>
+        <div style="float:left;margin:10px;margin-right:100px;">{{> taken}} {{> ktaken}}</div>
+        <div style="float:left;margin:10px;">{{> weer}} {{> boodschappen}}</div>
+    </div>
+</body>
+
+<template name="hello">
+    <h2>Planner</h2>
+    {{greeting}}
+    <input type="button" value="Click" />
+</template>
+
+<template name="afspraken">
+    <div>
+        <h2>Afspraken</h2>
+        <div>
+            <input type="text" class="afspraak float-left">
+            <button class="btn btn-success submit-afspraak margin-left">✎</button>
+            <table class="table table-striped">
+                {{#each alle_afspraken}}
+                <tr>
+                    <td>{{afspraak}}
+                        <button class="btn btn-danger delete-afspraak float-right">X</button>
+                    </td>
+                </tr>
+                {{/each}}
+            </table>
+        </div>
+    </div>
+</template>
+
+<template name="kafspraken">
+    <div>
+        <h2>Komende dagen</h2>
+        <div>
+            <input type="text" class="komende-afspraken float-left">
+            <button class="btn btn-success submit-komende-afspraken margin-left">✎</button>
+            <table class="table table-striped">
+                {{#each alle_kafspraken}}
+                <tr>
+                    <td>{{afspraak}}
+                        <button class="btn btn-danger delete-komende-afspraken float-right">X</button>
+                    </td>
+                </tr>
+                {{/each}}
+            </table>
+        </div>
+    </div>
+</template>
+
+<template name="taken">
+    <div>
+        <h2>Taken</h2>
+        <div>
+            <input type="text" class="taak float-left">
+            <button class="btn btn-success submit-taak margin-left">✎</button>
+            <table class="table table-striped">
+                {{#each alle_taken}}
+                <tr>
+                    <td>{{taak}}
+                        <button class="btn btn-danger delete-taak float-right">X</button>
+                    </td>
+                </tr>
+                {{/each}}
+            </table>
+        </div>
+    </div>
+</template>
+
+<template name="ktaken">
+    <div>
+        <h2>Deze week</h2>
+        <div>
+            <input type="text" class="komende-taken float-left">
+            <button class="btn btn-success submit-komende-taken margin-left">✎</button>
+            <table class="table table-striped">
+                {{#each alle_ktaken}}
+                <tr>
+                    <td>{{taak}}
+                        <button class="btn btn-danger delete-ktaak float-right">X</button>
+                    </td>
+                </tr>
+                {{/each}}
+            </table>
+        </div>
+    </div>
+</template>
+
+<template name="weer">
+    <div>
+        <h2>Weer vandaag</h2>
+    </div>
+</template>
+
+<template name="boodschappen">
+    <div>
+        <h2>Boodschappen</h2>
+        <div>
+            <input type="text" class="boodschap float-left">
+            <button class="btn btn-success submit-boodschap margin-left">✎</button>
+            <table class="table table-striped">
+                {{#each alle_boodschappen}}
+                <tr>
+                    <td>{{boodschap}}
+                        <button class="btn btn-danger delete-boodschap float-right">X</button>
+                    </td>
+                </tr>
+                {{/each}}
+            </table>
+        </div>
+    </div>
+</template>

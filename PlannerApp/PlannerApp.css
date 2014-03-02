@@ -1,0 +1,11 @@
+/* CSS declarations go here */
+ .float-left {
+    float:left;
+}
+.float-right {
+    float:right;
+    margin-right:-7px;
+}
+.margin-left {
+    margin-left:5px;
+}
