@@ -3,10 +3,12 @@
 </head>
 
 <body>
-    <div style="margin-left:120px;">
-        <div style="float:left;margin:10px;margin-right:100px;">{{> afspraken}} {{> kafspraken}}</div>
-        <div style="float:left;margin:10px;margin-right:100px;">{{> taken}} {{> ktaken}}</div>
-        <div style="float:left;margin:10px;">{{> weer}} {{> boodschappen}}</div>
+    <div class="container top-margin">
+        <div class="row">
+            <div class="span4">{{> afspraken}} {{> kafspraken}}</div>
+            <div class="span4">{{> taken}} {{> ktaken}}</div>
+            <div class="span4">{{> boodschappen}} {{> weer}}</div>
+        </div>
     </div>
 </body>
 
@@ -20,13 +22,20 @@
     <div>
         <h2>Afspraken</h2>
         <div>
-            <input type="text" class="afspraak float-left">
+            <input type="text" class="afspraak float-left" placeholder="Voeg een afspraak toe">
             <button class="btn btn-success submit-afspraak margin-left">✎</button>
             <table class="table table-striped">
                 {{#each alle_afspraken}}
                 <tr>
-                    <td>{{afspraak}}
-                        <button class="btn btn-danger delete-afspraak float-right">X</button>
+                    <td class="{{done_class}}">
+                        <div class="checkbox">
+                            <label>
+                                <input class="check" type="checkbox" {{{done_checkbox}}}>{{afspraak}} {{#if done_class}}
+                                <div class="destroy delete-afspraak">
+                                </div>
+                                {{/if}}
+                            </label>
+                        </div>
                     </td>
                 </tr>
                 {{/each}}
@@ -39,13 +48,19 @@
     <div>
         <h2>Komende dagen</h2>
         <div>
-            <input type="text" class="komende-afspraken float-left">
+            <input type="text" class="komende-afspraken float-left" placeholder="Voeg een afspraak toe">
             <button class="btn btn-success submit-komende-afspraken margin-left">✎</button>
             <table class="table table-striped">
                 {{#each alle_kafspraken}}
                 <tr>
-                    <td>{{afspraak}}
-                        <button class="btn btn-danger delete-komende-afspraken float-right">X</button>
+                    <td class="{{done_class}}">
+                        <div class="checkbox">
+                            <label>
+                                <input class="check" type="checkbox" {{{done_checkbox}}}>{{afspraak}} {{#if done_class}}
+                                <div class="destroy delete-komende-afspraken"></div>
+                                {{/if}}
+                            </label>
+                        </div>
                     </td>
                 </tr>
                 {{/each}}
@@ -58,13 +73,19 @@
     <div>
         <h2>Taken</h2>
         <div>
-            <input type="text" class="taak float-left">
+            <input type="text" class="taak float-left" placeholder="Voeg een taak toe">
             <button class="btn btn-success submit-taak margin-left">✎</button>
             <table class="table table-striped">
                 {{#each alle_taken}}
                 <tr>
-                    <td>{{taak}}
-                        <button class="btn btn-danger delete-taak float-right">X</button>
+                    <td class="{{done_class}}">
+                        <div class="checkbox">
+                            <label>
+                                <input class="check" type="checkbox" {{{done_checkbox}}}>{{taak}} {{#if done_class}}
+                                <div class="destroy delete-taak"></div>
+                                {{/if}}
+                            </label>
+                        </div>
                     </td>
                 </tr>
                 {{/each}}
@@ -77,13 +98,19 @@
     <div>
         <h2>Deze week</h2>
         <div>
-            <input type="text" class="komende-taken float-left">
+            <input type="text" class="komende-taken float-left" placeholder="Voeg een taak toe">
             <button class="btn btn-success submit-komende-taken margin-left">✎</button>
             <table class="table table-striped">
                 {{#each alle_ktaken}}
                 <tr>
-                    <td>{{taak}}
-                        <button class="btn btn-danger delete-ktaak float-right">X</button>
+                    <td class="{{done_class}}">
+                        <div class="checkbox">
+                            <label>
+                                <input class="check" type="checkbox" {{{done_checkbox}}}>{{taak}} {{#if done_class}}
+                                <div class="destroy delete-ktaak"></div>
+                                {{/if}}
+                            </label>
+                        </div>
                     </td>
                 </tr>
                 {{/each}}
@@ -102,13 +129,19 @@
     <div>
         <h2>Boodschappen</h2>
         <div>
-            <input type="text" class="boodschap float-left">
+            <input type="text" class="boodschap float-left" placeholder="Voeg een boodschap toe">
             <button class="btn btn-success submit-boodschap margin-left">✎</button>
             <table class="table table-striped">
                 {{#each alle_boodschappen}}
                 <tr>
-                    <td>{{boodschap}}
-                        <button class="btn btn-danger delete-boodschap float-right">X</button>
+                    <td class="{{done_class}}">
+                        <div class="checkbox">
+                            <label>
+                                <input class="check" type="checkbox" {{{done_checkbox}}}>{{boodschap}} {{#if done_class}}
+                                <div class="destroy delete-boodschap"></div>
+                                {{/if}}
+                            </label>
+                        </div>
                     </td>
                 </tr>
                 {{/each}}

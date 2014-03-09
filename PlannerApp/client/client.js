@@ -47,12 +47,20 @@ if (Meteor.isClient) {
         },
         'click .delete-afspraak': function() {
             Afspraken.remove(this._id);
+        },
+        'click .check': function() {
+            Afspraken.update(this._id, {
+                $set: {
+                    done: !this.done
+                }
+            });
         }
     });
     /*Komende afspraken*/
     Template.kafspraken.events({
         'click .submit-komende-afspraken': function() {
-            insert_kafspraak();
+            if ($('.komende-afspraken').val())
+                insert_kafspraak();
         },
         'keyup .komende-afspraken': function(evt) {
             if (evt.which === 13) {
@@ -61,6 +69,13 @@ if (Meteor.isClient) {
         },
         'click .delete-komende-afspraken': function() {
             Komendeafspraken.remove(this._id);
+        },
+        'click .check': function() {
+            Komendeafspraken.update(this._id, {
+                $set: {
+                    done: !this.done
+                }
+            });
         }
     });
     /*Taken*/
@@ -76,6 +91,13 @@ if (Meteor.isClient) {
         },
         'click .delete-taak': function() {
             Taken.remove(this._id);
+        },
+        'click .check': function() {
+            Taken.update(this._id, {
+                $set: {
+                    done: !this.done
+                }
+            });
         }
     });
     /*komende taken*/
@@ -90,6 +112,13 @@ if (Meteor.isClient) {
         },
         'click .delete-ktaak': function() {
             Komendetaken.remove(this._id);
+        },
+        'click .check': function() {
+            Komendetaken.update(this._id, {
+                $set: {
+                    done: !this.done
+                }
+            });
         }
     });
     /*Boodschappen*/
@@ -104,25 +133,63 @@ if (Meteor.isClient) {
         },
         'click .delete-boodschap': function() {
             Boodschappen.remove(this._id);
+        },
+        'click .check': function() {
+            Boodschappen.update(this._id, {
+                $set: {
+                    done: !this.done
+                }
+            });
         }
     });
     /*Afspraken*/
     Template.afspraken.alle_afspraken = function() {
         return Afspraken.find();
     };
+    Template.afspraken.done_class = function() {
+        return this.done? 'done' : '';
+    };
+    Template.afspraken.done_checkbox = function() {
+        return this.done? 'checked="checked"':'';
+    };
     /*Komende afspraken*/
     Template.kafspraken.alle_kafspraken = function() {
         return Komendeafspraken.find();
+    };
+    Template.kafspraken.done_class = function() {
+        return this.done? 'done' : '';
+    };
+    Template.kafspraken.done_checkbox = function() {
+        return this.done? 'checked="checked"':'';
     };
     /*Taken*/
     Template.taken.alle_taken = function() {
         return Taken.find();
     };
+    Template.taken.done_class = function() {
+        return this.done? 'done' : '';
+    };
+    Template.taken.done_checkbox = function() {
+        return this.done? 'checked="checked"':'';
+    };
     /*Komende taken*/
     Template.ktaken.alle_ktaken = function() {
         return Komendetaken.find();
     };
+    Template.ktaken.done_class = function() {
+        return this.done? 'done' : '';
+    };
+    Template.ktaken.done_checkbox = function() {
+        return this.done? 'checked="checked"':'';
+    };
+    /*Boodschappen*/
     Template.boodschappen.alle_boodschappen = function() {
         return Boodschappen.find();
+    };
+    Template.boodschappen.done_class = function() {
+        return this.done? 'done' : '';
+    };
+    Template.boodschappen.done_checkbox = function() {
+        return this.done? 'checked="checked"':'';
     };
 }
