@@ -1,0 +1,54 @@
+.float-left {
+    float:left;
+}
+.float-right {
+    float:right;
+    margin-right:-7px;
+}
+.margin-left {
+    margin-left:5px;
+}
+.done {
+    text-decoration: line-through;
+}
+.btn-danger {
+    padding:1px 12px;
+}
+.afspraak, .taak, .komende-afspraken, .komende-taken, .boodschap{
+  width:243px;
+}
+.top-margin{
+  margin-top: 10%;
+}
+.destroy {
+    background: url('/destroy.png') no-repeat 0 0;
+    cursor: pointer;
+
+    margin-bottom: -1px;
+    height: 20px;
+    width: 20px;
+    float: right;
+    vertical-align: middle;
+}
+.destroy:hover {
+    background-position: 0 -20px;
+}
+.container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
+max-width: 960px;
+min-width: 250px;
+width: auto;
+}
+.temperature{
+    text-align: center;
+     font-size: 30pt;
+     margin-top: 20px;
+}
+button, input{
+  height: 35px !important;
+}
+.check{
+  margin-top:-6.7px !important;
+}
+.appointment, .upcoming-appointment, .task, .upcoming-tasks, .grocery{
+  width: $input-width;
+}

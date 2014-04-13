@@ -1,0 +1,24 @@
+<template name="tasks">
+    <div>
+        <h2>Taken</h2>
+        <div>
+            <input type="text" class="task float-left" placeholder="Voeg een task toe">
+            <button class="btn btn-success submit-task margin-left">✎</button>
+            <table class="table table-striped">
+                {{#each all_tasks}}
+                <tr>
+                    <td class="{{done_class}}">
+                        <div class="checkbox">
+                            <label>
+                                <input class="check" type="checkbox" {{done_checkbox}}>{{task}} {{#if done_class}}
+                                <div class="destroy delete-task"></div>
+                                {{/if}}
+                            </label>
+                        </div>
+                    </td>
+                </tr>
+                {{/each}}
+            </table>
+        </div>
+    </div>
+</template>

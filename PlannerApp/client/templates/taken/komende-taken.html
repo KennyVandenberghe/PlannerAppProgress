@@ -1,0 +1,24 @@
+<template name="upcomingTasks">
+    <div>
+        <h2>Deze week</h2>
+        <div>
+            <input type="text" class="upcoming-tasks float-left" placeholder="Voeg een taak toe">
+            <button class="btn btn-success submit-upcoming-tasks margin-left">✎</button>
+            <table class="table table-striped">
+                {{#each all_upcoming_tasks}}
+                <tr>
+                    <td class="{{done_class}}">
+                        <div class="checkbox">
+                            <label>
+                                <input class="check" type="checkbox" {{done_checkbox}}>{{task}} {{#if done_class}}
+                                <div class="destroy delete-upcoming-task"></div>
+                                {{/if}}
+                            </label>
+                        </div>
+                    </td>
+                </tr>
+                {{/each}}
+            </table>
+        </div>
+    </div>
+</template>

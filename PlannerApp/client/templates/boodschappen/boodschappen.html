@@ -1,0 +1,24 @@
+<template name="groceries">
+    <div>
+        <h2>Boodschappen</h2>
+        <div>
+            <input type="text" class="grocery float-left" placeholder="Voeg een boodschap toe">
+            <button class="btn btn-success submit-grocery margin-left">✎</button>
+            <table class="table table-striped">
+                {{#each all_groceries}}
+                <tr>
+                    <td class="{{done_class}}">
+                        <div class="checkbox">
+                            <label>
+                                <input class="check" type="checkbox" {{done_checkbox}}>{{grocery}} {{#if done_class}}
+                                <div class="destroy delete-grocery"></div>
+                                {{/if}}
+                            </label>
+                        </div>
+                    </td>
+                </tr>
+                {{/each}}
+            </table>
+        </div>
+    </div>
+</template>

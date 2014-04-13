@@ -1,0 +1,24 @@
+<template name="appointments">
+  <div>
+    <h2>Afspraken</h2>
+      <div>
+        <input type="text" class="appointment float-left" placeholder="Voeg een afspraak toe">
+          <button class="btn btn-success submit-appointment margin-left">✎</button>
+          <table class="table table-striped">
+            {{#each all_appointments}}
+            <tr>
+              <td class="{{done_class}}">
+                <div class="checkbox">
+                  <label>
+                   <input class="check" type="checkbox" {{done_checkbox}}>{{appointment}} {{#if done_class}}
+                     <div class="destroy delete-appointment"></div>
+                        {{/if}}
+                  </label>
+                </div>
+              </td>
+            </tr>
+            {{/each}}
+          </table>
+      </div>
+  </div>
+</template>

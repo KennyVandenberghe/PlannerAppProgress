@@ -1,0 +1,24 @@
+<template name="upcomingAppointments">
+    <div>
+        <h2>Komende dagen</h2>
+        <div>
+            <input type="text" class="upcoming-appointment float-left" placeholder="Voeg een afspraak toe">
+            <button class="btn btn-success submit-upcoming-appointment margin-left">✎</button>
+            <table class="table table-striped">
+                {{#each all_upcoming_appointments}}
+                <tr>
+                    <td class="{{done_class}}">
+                        <div class="checkbox">
+                            <label>
+                                <input class="check" type="checkbox" {{done_checkbox}}>{{appointment}} {{#if done_class}}
+                                <div class="destroy delete-upcoming-appointment"></div>
+                                {{/if}}
+                            </label>
+                        </div>
+                    </td>
+                </tr>
+                {{/each}}
+            </table>
+        </div>
+    </div>
+</template>

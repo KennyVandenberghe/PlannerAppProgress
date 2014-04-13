@@ -1,0 +1,10 @@
+<template name="weather">
+    <div>
+      <h2>Weer vandaag</h2>
+        <div class="temperature">
+        	{{#with weather}}
+        	{{temperature}} °C
+        	{{/with}}
+    		</div>
+    </div>
+</template>
