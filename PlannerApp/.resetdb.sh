@@ -1,1 +1,1 @@
-mongo pb --eval "db.dropDatabase()"
+mongo PlannerApp --eval "db.dropDatabase()"

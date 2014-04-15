@@ -8,16 +8,36 @@ if (Meteor.isServer) {
 			PA.Groceries.remove({});
 		},
 		weather: function(){
-			var weather = Npm.require('Openweather-Node');
-			weather.now("Antwerp",function(err, aData)
-			{
-				var temperature = aData.getDegreeTemp();
-				temp = _.extend({}, {temperature: Math.round(temperature.temp_min)});
-				console.log(temp);
-				if(err) console.log(err);
-			});
 			PA.Weather.remove({});
-			PA.Weather.insert(temp);
+			var weather = Npm.require('Openweather-Node');
+			weather.now("Antwerp",Meteor.bindEnvironment(function(err, aData)
+			{
+				if(err){
+					console.log(err);
+				}
+				else{
+					console.log("Success!");
+					var temperature = aData.getDegreeTemp();
+					temp = _.extend({}, {temperature: Math.round(temperature.temp_min)});
+					PA.Weather.insert(temp);
+				}
+			}));
+		},
+		getTemperature: function(){
+			PA.Weather.remove({});
+			var weather = Npm.require('Openweather-Node');
+			weather.now("Antwerp",Meteor.bindEnvironment(function(err, aData)
+			{
+				if(err){
+					console.log(err);
+				}
+				else{
+					console.log("Success!");
+					var temperature = aData.getDegreeTemp();
+					temp = _.extend({}, {temperature: Math.round(temperature.temp_min)});
+					PA.Weather.insert(temp);
+				}
+			}));
 		}
 	});
 }

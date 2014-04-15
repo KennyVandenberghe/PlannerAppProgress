@@ -4,5 +4,5 @@ Template.weather.rendered = function() {
 
 Template.weather.helpers({
 	'weather': function(){
-    return PA.Weather.findOne({temperature: {$exists: true}});
+    return PA.Weather.findOne({_id: {$exists: true}});
 }});
